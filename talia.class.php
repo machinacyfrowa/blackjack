@@ -1,13 +1,16 @@
 <?php
 class Talia {
+    //definicje atrybutow
     public $wartosci = array('0', '2', '3', '4' ,'5', '6', '7', '8', '9', 'J', 'Q', 'K', 'A');
     public $kolory = array('C', 'D', 'H', 'S');
     public $karty = array();
 
+    //konstruktor
     function __construct() {
         $this->stworzTalie();
         $this->tasuj();
     }
+    //tworzy poukładaną (nie przetasowaną) talię
     function stworzTalie() {
         foreach ($this->wartosci as $wartosc) {
             foreach ($this->kolory as $kolor) {
@@ -16,6 +19,7 @@ class Talia {
             }
         }
     }
+    //losowo tasuje karty w talii
     function tasuj() {
         $potasowane = array();
         while(count($this->karty) > 0) {
@@ -25,6 +29,7 @@ class Talia {
         }
         $this->karty = $potasowane;
     }
+    //wez karte z talii (usuwa ją z talii)
     function wezKarte() {
         if(count($this->karty) == 0) {
             $this->stworzTalie();
