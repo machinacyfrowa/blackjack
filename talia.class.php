@@ -35,7 +35,7 @@ class Talia {
             $this->stworzTalie();
             $this->tasuj();
         }
-        return array_splice($this->karty, 0, 1);
+        return array_splice($this->karty, 0, 1)[0];
     }
 }
 ?>
