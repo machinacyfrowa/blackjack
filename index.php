@@ -20,6 +20,14 @@ echo '<br>Reka gracza<br>';
 foreach($rekaGracza as $kartaGracza) {
     $kartaGracza->pokazKarte();
 }
+echo '<br>Wartość ręki gracza:';
+$sumaGracza = 0;
+foreach($rekaGracza as $kartaGracza) {
+    $sumaGracza += $kartaGracza->punkty();
+}
+echo $sumaGracza;
+
+
 echo '<br>Reka krupiera<br>';
 foreach($rekaKrupiera as $kartaKrupiera) {
     $kartaKrupiera->pokazKarte();

@@ -30,5 +30,19 @@ class Karta {
         else
             echo '<img src="'.$this->obrazekTyl.'">';
     }
+    //zwraca wartość punktową karty
+    function punkty() {
+        switch($this->wartosc){
+            case '0':
+            case 'J':
+            case 'Q':
+            case 'K':
+                return 10;
+            case 'A':
+                return 11;
+            default:
+                return intval($this->wartosc);
+        }
+    }
 }
 ?>
