@@ -25,7 +25,13 @@ class Gracz {
     public function punkty() {
         $suma = 0;
         foreach($this->karty as $karta) {
-            $suma += $karta->punkty();
+            //jeżeli dobranie asa powoduje przekroczenie 21 to policz
+            //asa za 1
+            if($suma + $karta->punkty() > 21) {
+                $suma += 1;
+            } else {
+                $suma += $karta->punkty();
+            }
         }
         return $suma;
     }

@@ -6,6 +6,7 @@ include('gracz.class.php');
 $talia = new Talia();
 
 $gracz = new Gracz($talia);
+$gracz->dobierzKarte();
 
 $krupier = new Gracz($talia);
 
